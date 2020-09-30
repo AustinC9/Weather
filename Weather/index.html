@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Weather</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <form>
+        <div class="container-fluid border col-4">
+            <div class="form-group">
+                <label for="zip">Zip Code</label>
+                <input type="text" class="form-control" id="zip" placeholder="Enter Zip Code">
+                <small id="zipdes" class="form-text text-muted">We'll <strike>never</strike> share your location with
+                    anyone else.</small>
+            </div>
+            <button type="button" class="btn btn-success" id="getweather">Get Weather</button>
+            <br>
+    </form>
+    </div>
+
+    <div class="container-fluid border col-3" id="hideTable">
+        <!--City Table-->
+        <table class="table text-center border">
+            <thead>
+                <tr class="bg-success">
+                    <th scope="col">City</th>
+                </tr>
+            </thead>
+            <thead>
+                <tr class="bg-white">
+                    <td class="city" scope="row" id="city"></td>
+                </tr>
+            </thead>
+        </table>
+        <!--Temperature Table-->
+        <table class="table text-center border">
+            <thead>
+                <tr class="bg-success">
+                    <th scope="col" colspan="3">Temperature</th>
+                </tr>
+            </thead>
+            <thead>
+                <tr class="bg-primrary">
+                    <td id="tempK" scope="row"></td>
+                    <td id="tempF" scope="row"></td>
+                    <td id="tempC" scope="row"></td>
+                </tr>
+            </thead>
+        </table>
+
+        <!--Condition Table-->
+        <table class="table text-center border">
+            <thead>
+                <tr class="bg-success">
+                    <th scople="col">Current Condition</th>
+                </tr>
+            </thead>
+            <thead>
+                <tr class="bg-white">
+                    <th scope="row" id="cond"></th>
+                </tr>
+            </thead>
+        </table>
+
+        <!--Condition Image Table-->
+        <table class="table text-center border">
+            <thead>
+                <tr class="bg-success">
+                    <th scope="row">Current Weather Image</th>
+                </tr>
+            </thead>
+            <thead>
+                <tr class="bg-white">
+                    <td id="wtrIcon" scope="row"></td>
+                </tr>
+            </thead>
+
+
+        </table>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="./test.js"></script>
+</body>
+
+</html>
