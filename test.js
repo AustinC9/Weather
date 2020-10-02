@@ -16,6 +16,13 @@ document.getElementById("hideTable").style.display = 'none';
 
 btn.addEventListener('click', callWeatherAPI, true);
 
+//enter key for input
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+        callWeatherAPI();
+    }
+});
+
 //input zip for API to return weather for inputted zip
 
 async function callWeatherAPI() {
@@ -59,8 +66,8 @@ async function callWeatherAPI() {
         alert("Enter a valid zip!")
     }
 }
-   //console.log(response);
-    //alert()
+//console.log(response);
+//alert()
 //callWeatherAPI();
 //zip code validating
 function validateZipCode(zipInput) {
@@ -69,7 +76,7 @@ function validateZipCode(zipInput) {
 }
 //const currentWeather
 console.log(Math.log(.1));
-async function cloudHeight(){
+async function cloudHeight() {
     let zipInput = document.getElementById("zip").value;
     let newApi = `https://api.openweathermap.org/data/2.5/weather?zip=${zipInput}&appid=${key}`;
     let validZip = validateZipCode(zipInput);
@@ -89,7 +96,24 @@ async function cloudHeight(){
 
             else {
                 let T = (data.main.temp - 273.15);
+                let rH = (data.main.humidity) * .01;
                 console.log(T);
+                console.log(rH);
+                // inner function of formula
+                let cons = (17.27 * T) / (237.7 + T);
+                console.log(cons);
+                //console.log(2 + T);
+                let lN = cons + Math.log(rH);
+                console.log(lN);
+                let top = lN * 237.7;
+                //console.log((237.7(((17.27 * T)/237.7 + T) + Math.log(rH))));
+                console.log(top);
+                let bot = 17.27 - lN;
+                console.log(bot);
+                let tDp = top / bot;
+                console.log(tDp);
+                let height = ((T - tDp) / 2.5) * 1000;
+                console.log(height);
                 /* city.textContent = data.name;
                 tempK.textContent = data.main.temp + " K";
                 currentCond.textContent = data.weather[0].description
